@@ -1,0 +1,42 @@
+/*
+TODO:
+- Pick the right fonts
+- Make it responsive
+- Improve styling of links 
+- Improve CSS effect to make page more readable (look for different location).
+*/
+
+body {
+    font-size: 25px;
+    background-color: black;
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 1rem;
+}
+
+/* fonts */
+h1, h2, h3, header * {
+  font-family: 'Merriweather', serif;
+}
+body, p {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+/* Color inversion */
+.triangle-invert {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  /* Make the div into a triangle */
+  clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+  background: transparent;
+  backdrop-filter: invert(0.8);
+  -webkit-backdrop-filter: invert(1);
+  pointer-events: none; /* Let clicks pass through */
+  position: fixed; /* or relative/fixed as needed */
+}
