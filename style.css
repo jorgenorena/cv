@@ -1,8 +1,6 @@
 /*
 TODO:
-- Pick the right fonts
 - Make text justified
-- Improve styling of links 
 - Make it responsive
 - Improve CSS effect to make page more readable (look for different location).
   + Add buttons for day/night/mid
@@ -23,12 +21,31 @@ body {
 }
 
 /* fonts */
-h1, h2, h3, header * {
+/* h1, h2, h3, header * {
   font-family: 'Merriweather', serif;
 }
 body, p {
   font-family: 'Source Sans Pro', Arial, sans-serif;
+} */
+/* h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
+body, p {
+  font-family: 'Lato', Arial, sans-serif;
+} */
+/* h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+body, p {
+  font-family: 'Open Sans', Arial, sans-serif;
+} */
+h1, h2, h3, header * {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+body, p {
+  font-family: 'IBM Plex Serif', serif;
+}
+
 
 /* links */
 a {
