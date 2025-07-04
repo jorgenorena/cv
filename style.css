@@ -1,9 +1,12 @@
 /*
 TODO:
 - Pick the right fonts
-- Make it responsive
+- Make text justified
 - Improve styling of links 
+- Make it responsive
 - Improve CSS effect to make page more readable (look for different location).
+  + Add buttons for day/night/mid
+  + Animate transitions between day/night/mid using the color inversion snippet
 */
 
 body {
@@ -27,6 +30,17 @@ body, p {
   font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
+/* links */
+a {
+    color: darkslateblue
+}
+a:hover {
+    color: darkolivegreen;
+}
+a:visited {
+    color: darkslategray;
+}
+
 /* Color inversion */
 .triangle-invert {
   z-index: 1;
@@ -39,4 +53,6 @@ body, p {
   -webkit-backdrop-filter: invert(1);
   pointer-events: none; /* Let clicks pass through */
   position: fixed; /* or relative/fixed as needed */
+  top: 0;
+  left: 0;
 }
