@@ -11,19 +11,34 @@
 </head>
 <body>
     <div id="container">
-        <div class="triangle-invert" aria-hidden="true"></div>
         <div id="content">
-        <div id="icons">
+
+        <!--- Night/Day/Mid mode effects, just to show off CSS skills -->
+        <input type="radio" id="opt1" name="icon-toggle" class="icon-radio" checked hidden>
+        <label for="opt1" class="icon-label" hidden>
             <span class="material-symbols-outlined">
                 clear_day
             </span>
+        </label>
+
+        <input type="radio" id="opt2" name="icon-toggle" class="icon-radio" hidden>
+        <label for="opt2" class="icon-label" hidden>
             <span class="material-symbols">
                 brightness_4
             </span>
+        </label>
+
+        <input type="radio" id="opt3" name="icon-toggle" class="icon-radio" hidden>
+        <label for="opt3" class="icon-label" hidden>
             <span class="material-symbols-outlined">
                 dark_mode
             </span>
-        </div>
+        </label>
+
+        <div class="triangle-invert" hidden></div>
+        <!--- Night/Day/Mid mode effects, just to show off CSS skills -->
+
+        <!-- Actual content starts here -->
         <header>
             <h1>Jorge Noreña</h1>
             <strong>Physics Professor | Cosmologist | Machine Learning</strong>
