@@ -29,6 +29,11 @@ body {
     overflow: auto;
     scrollbar-width: thin;
 }
+#icons {
+  position: absolute;
+  top: 1rem;
+  right: 2.3rem;
+}
 
 /* fonts */
 /* h1, h2, h3, header * {
