@@ -1,9 +1,9 @@
 /*
 TODO:
-- Style scrollbar
 - Improve CSS effect to make page more readable (look for different location).
   + Add buttons for day/night/mid
   + Animate transitions between day/night/mid using the color inversion snippet
+- Fonts
 - Remove and rebuild default browser styling
 */
 
@@ -27,6 +27,7 @@ body {
     padding: 0 1rem;
     height: 95vh;
     overflow: auto;
+    scrollbar-width: thin;
 }
 
 /* fonts */
