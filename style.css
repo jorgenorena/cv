@@ -1,7 +1,5 @@
 /*
 TODO:
-- Improve CSS effect to make page more readable (look for different location).
-  + Animate transitions between day/night/mid using the color inversion snippet
 - Fonts
 - Remove and rebuild default browser styling
 */
@@ -23,8 +21,8 @@ body {
 #content {
     background-color: white;
     margin: 0;
-    padding: 0 1rem;
-    height: 95vh;
+    padding: 1rem 1rem 0 1rem;
+    height: 97.85vh;
     overflow: auto;
     scrollbar-width: thin;
 }
@@ -61,23 +59,23 @@ p {
 
 /* links */
 a {
-    color: darkslateblue;
+    color: darkblue;
 }
 a:hover {
-    color: darkolivegreen;
+    color: darkmagenta;
 }
 a:visited {
-    color: darkslategray;
+    color: darkslateblue;
 }
 
 /* Color inversion */
-.triangle-invert {
+.shape-invert {
   display: block;
   z-index: 1;
   width: 100%;
-  height: 95vh;
+  height: 97.85vh;
   /* Make the div into a triangle */
-  clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%);
   background: transparent;
   backdrop-filter: invert(0.8);
   -webkit-backdrop-filter: invert(1);
@@ -85,6 +83,37 @@ a:visited {
   position: absolute; 
   top: 0;
   left: 0;
+  transition: clip-path 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Clickable icons */
+.icon-radio {
+  display: none;
+}
+.icon-label {
+  position: sticky;
+  display: inline !important;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem;
+  transition: filter 0.2s;
+  user-select: none;
+}
+.icon-radio:checked + .icon-label {
+  filter: drop-shadow(0 0 4px #7a7c7f);
+  opacity: 1;
+}
+.icon-label + .icon-radio,
+.icon-label:last-of-type {
+  margin-right: 0;
+}
+
+/* Show content when the corresponding radio is checked */
+#opt1:checked ~ .shape-invert {
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 0% 100%); 
+}
+#opt3:checked ~ .shape-invert { 
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
 }
 
 /* responsive */
@@ -93,47 +122,26 @@ a:visited {
         width: 1200px;
     }
 }
-@media (min-width: 501px) {
+@media (min-width: 601px) {
     body {
         font-size: 25px;
     }
+    #content {
+      padding: 0 2rem;
+    }
+    .icon-label {
+      position: absolute;
+    }
+    #opt3 + .icon-label {
+      top: 1rem;
+      right: 2.3rem;
+    }
+    #opt2 + .icon-label {
+      top: 1rem;
+      right: 4.3rem;
+    }
+    #opt1 + .icon-label {
+      top: 1rem;
+      right: 6.3rem;
+    }
 }
-
-/* Clickable icons */
-.icon-radio {
-  display: none;
-}
-
-.icon-label {
-  position: absolute;
-  display: inline !important;
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 0.5rem;
-  transition: filter 0.2s;
-  user-select: none;
-}
-#opt3 + .icon-label {
-  top: 1rem;
-  right: 2.3rem;
-}
-#opt2 + .icon-label {
-  top: 1rem;
-  right: 4.3rem;
-}
-#opt1 + .icon-label {
-  top: 1rem;
-  right: 6.3rem;
-}
-.icon-radio:checked + .icon-label {
-  filter: drop-shadow(0 0 4px #7a7c7f);
-  opacity: 1;
-}
-
-.icon-label + .icon-radio,
-.icon-label:last-of-type {
-  margin-right: 0;
-}
-
-/* Show content when the corresponding radio is checked */
-#opt1:checked ~ .triangle-invert { display: none; }
