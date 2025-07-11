@@ -1,6 +1,6 @@
 /*
 TODO:
-- Additional animation on load for showing off
+- Fix menu positioning on mobile
 */
 
 h1 {
@@ -70,6 +70,15 @@ body {
     scrollbar-width: thin;
 }
 
+/* language choices */
+div.lang {
+  font-size: 1rem;
+  display: block;
+}
+div.lang a {
+  text-decoration: none;
+}
+
 /* fonts */
 h1, h2, h3, header * {
   font-family: 'Playfair Display', sans-serif;
@@ -101,8 +110,7 @@ body, p {
   display: none;
 }
 .icon-label {
-  position: sticky;
-  display: inline !important;
+  display: inline-block !important;
   cursor: pointer;
   font-size: 2rem;
   padding: 0.5rem;
@@ -138,6 +146,11 @@ body, p {
     }
     #content {
       padding: 0 2rem;
+    }
+    .lang {
+      position: absolute;
+      right: 3.3rem;
+      top: 4rem;
     }
     .icon-label {
       position: absolute;
