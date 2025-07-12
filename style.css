@@ -22,7 +22,6 @@ p {
     margin-block-start: 1em;
     margin-block-end: 1em;
     unicode-bidi: isolate;
-    text-align: justify;
 }
 strong {
   font-weight: bolder;
@@ -73,7 +72,11 @@ body {
 /* language choices */
 div.lang {
   font-size: 1rem;
-  display: block;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  text-align: center;
+  display: inline-block;
+  float: right;
 }
 div.lang a {
   text-decoration: none;
@@ -144,13 +147,17 @@ body, p {
     body {
         font-size: 25px;
     }
+    p {
+      text-align: justify;
+    }
     #content {
       padding: 0 2rem;
     }
-    .lang {
+    div.lang {
       position: absolute;
       right: 3.3rem;
       top: 4rem;
+      line-height:1.5rem;
     }
     .icon-label {
       position: absolute;
